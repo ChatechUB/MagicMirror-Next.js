@@ -6,11 +6,11 @@ import styles from '../styles/Home.module.scss'
 
 export default function Home() {
 
-  const text = "YR"
+
 
   return (
     <div className={styles.container}>
-      <Yr text={text} />
+      <Yr/>
       <Atb/>
     </div>
   )
