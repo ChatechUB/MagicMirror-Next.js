@@ -1,35 +1,27 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-function Clock() {
+const Clock =  () => {
     
-    var x = setInterval(function() {
+    let clock = ""
 
+    var x = setInterval(function () {
 
         const today = new Date();
         let h = today.getHours();
         let m = today.getMinutes();
         let s = today.getSeconds();
 
-        const {test} = h + ":" + m + ":" + s;
+        clock = h + ":" + m + ":" + s;
 
+        console.log(clock)
 
-        const clock2 = ({h, m, s}) => {
-            
-            
-            return(
-                h + ":" + m + ":" + s
-            )
-        }
-        
-
-        
     
     }, 1000);
 
     
     return (
         <div>
-            <h1> hello {clock2} </h1>
+            <h1> test {clock} </h1>
         </div>
     )
 }
