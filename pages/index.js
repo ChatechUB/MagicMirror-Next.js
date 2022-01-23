@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Atb from '../components/atb'
 import Clock from '../components/Clock'
 import Hue from '../components/Hue'
+import MOTD from '../components/MOTD'
 import Yr from '../components/yr'
 import styles from '../styles/Home.module.scss'
 
@@ -16,6 +17,7 @@ export default function Home() {
       <Atb/>
       <Hue/>
       <Clock/>
+      <MOTD/>
     </div>
   )
 }
