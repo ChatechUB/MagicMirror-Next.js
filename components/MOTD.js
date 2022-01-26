@@ -10,14 +10,30 @@ const MOTD = () => {
 
   //setCurrentMOTD("hei");
 
-
+  useEffect(() => {
+    getData()  
+  }, [])
   
+  const getData = async () => {
+
+    const docRef = doc(db, "MOTD", "Normal")
+
+    const query = await getDoc(docRef)
+
+    if (query.exists()) {
+      setCurrentMOTD(query.data())
+      console.log(query.data());
+    }
+
+    else {
+      console.log("Not found")
+    }
+  }
 
   const today = new Date();
   let month = today.getMonth();
   let d = today.getDate();
-  console.log(d);
-  console.log(month);
+
   
   return <div>
       <h1 className="MOTD"> {currentMOTD} </h1>
