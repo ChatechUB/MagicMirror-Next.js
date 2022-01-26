@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import styles from '../styles/Home.module.scss'
 
 function Clock ()  {
     
@@ -37,9 +38,9 @@ function Clock ()  {
 
 
     return (
-        <div>
-            <h1 className="clock">{clock}</h1>
-            <h2 className="date">{date}</h2>
+        <div className={styles.clockParent}>
+            <h1 className={styles.clock}>{clock}</h1>
+            <h2 className={styles.date}>{date}</h2>
         </div>
     )
 }

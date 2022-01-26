@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from '../styles/Home.module.scss'
 
 export const Countdown = () => {
   
@@ -43,7 +44,7 @@ export const Countdown = () => {
     }, 1000);
   
   
-  return <div>
+  return <div className={styles.countdownParent}>
       <h2> {WhatIsCounting} {countdownTime}</h2>
   </div>;
 };

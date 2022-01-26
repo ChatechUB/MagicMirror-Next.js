@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { doc, getDoc } from "firebase/firestore";
 import db from './firebase.js';
+import styles from '../styles/Home.module.scss'
 
 
 const MOTD = () => {
@@ -47,8 +48,8 @@ const MOTD = () => {
   let d = today.getDate();
 
   
-  return <div>
-      <h1 className="MOTD"> {displayMOTD} </h1>
+  return <div className={styles.MOTDContainer}>
+      <h1 className={styles.MOTD}> {displayMOTD} </h1>
   </div>;
 };
 
