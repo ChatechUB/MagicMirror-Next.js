@@ -1,33 +1,45 @@
 import React, {useEffect, useState} from 'react';
 import { doc, getDoc } from "firebase/firestore";
-import {db} from './firebase.js';
+import db from './firebase.js';
 
 
 const MOTD = () => {
 
-  const [currentMOTD, setCurrentMOTD] = useState("LOADING...");
+  const [allMOTD, setAllMOTD] = useState(["test1000"]);
+  const [displayMOTD, setDisplayMOTD] = useState("Loading...");
+  const [showingMODT, setShowingMODT] = useState(0);
 
 
   //setCurrentMOTD("hei");
 
   useEffect(() => {
-    getData()  
+    getData()
+
+
+    let intervalID
+    intervalID = setInterval(updateMODT, 5000)  
   }, [])
   
   const getData = async () => {
-
+    
     const docRef = doc(db, "MOTD", "Normal")
 
     const query = await getDoc(docRef)
 
     if (query.exists()) {
-      setCurrentMOTD(query.data())
+      setAllMOTD(query.data())
       console.log(query.data());
-    }
+      updateMODT()
 
-    else {
-      console.log("Not found")
     }
+    else {
+      console.log("MOTD Not found")
+    }
+  }
+
+  const updateMODT = () => {
+    //code to change modt
+
   }
 
   const today = new Date();
@@ -36,7 +48,7 @@ const MOTD = () => {
 
   
   return <div>
-      <h1 className="MOTD"> {currentMOTD} </h1>
+      <h1 className="MOTD"> {displayMOTD} </h1>
   </div>;
 };
 
