@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Atb from '../components/atb'
+import { Chantina } from '../components/Chantina'
 import Clock from '../components/Clock'
 import { Countdown } from '../components/Countdown'
 import Hue from '../components/Hue'
@@ -20,6 +21,7 @@ export default function Home() {
       <Clock/>
       <MOTD/>
       <Countdown/>
+      <Chantina/>
     </div>
   )
 }

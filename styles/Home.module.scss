@@ -81,3 +81,17 @@
 .yr{
     grid-area: tr;
 }
+
+.chantinaParent{
+    grid-area: mmr;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.chantina {
+    text-align: center;
+    font-size: 3em;
+    grid-area: mmr;
+}
