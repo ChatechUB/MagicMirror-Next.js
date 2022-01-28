@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc, collection, getDocs, query } from "firebase/firestore";
 import db from './firebase.js';
 import styles from '../styles/Home.module.scss'
 

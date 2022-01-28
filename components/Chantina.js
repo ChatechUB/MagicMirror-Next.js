@@ -1,51 +1,27 @@
 import React, {useState, useEffect} from 'react'
 import styles from '../styles/Home.module.scss'
-import { collection, getDocs, query } from "firebase/firestore"
-import { db } from './firebase-chantina';
-
-
-
-export async function getServerSideProps(context) {
-
-	let matretter = [];
-	let priser = [];
-
-	let q = query(collection(db, "Mat"));
-
-	const snapshot = await getDocs(q);
-
-	snapshot.forEach(doc => {
-		const data = doc.data();
-		matretter.push(data.Matrett);
-		priser.push(data.Pris);
-	});
-
-    console.log(matretter);
-
-	return {
-		props: {
-			matretter: matretter,
-			priser: priser
-		}
-	}
-}
-
+import axios from 'axios';
 
 
 export const Chantina = ({ matretter, priser }) => {
     
-    
+	const [data, setData] = useState([])
 
-    //const [dagensLunsj, setdagensLunsj] = useState("Pizza")
-    //const [dagensPris, setdagensPris] = useState("30,- pr stk")
-    
-    
-    
+    useEffect(() => {
+		axios.get("https://chantina.no/api/getWeek")
+		.then((res)=> {
+			console.log(res.data);
+			setData(res.data)
+		})
+	}, [])
+
     
     return (
         <div className={styles.chantinaParent}>
             <h1 className={styles.chantina}>Dagens Lunsj er</h1>
-                 
+			<h1 className={styles.chantina}>{data[new Date().getDay() - 1].matretter}</h1>
+			<h1 className={styles.chantina}>{data[new Date().getDay() - 1].priser}</h1>
+			
         </div>
     )
 }
