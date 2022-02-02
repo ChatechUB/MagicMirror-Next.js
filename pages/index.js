@@ -17,7 +17,6 @@ export default function Home() {
     <div className={styles.gridContainer}>
       <Yr/>
       <Atb/>
-      <Hue/>
       <Clock/>
       <MOTD/>
       <Countdown/>

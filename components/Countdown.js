@@ -3,12 +3,12 @@ import styles from '../styles/Home.module.scss'
 
 export const Countdown = () => {
   
-    var countDownDate = new Date("Feb 18, 2022 15:40:0").getTime();
+    var countDownDate = new Date("Feb 27, 2022 0:0:0").getTime();
     //var countDownDate = new Date("Jan 2, 2022 18:44:0").getTime();
     
     const [countdownTime, setCountdownTime] = useState();
 
-    let WhatIsCounting = "Vinterferien starter om:"
+    let WhatIsCounting = "Petter har bursdag om:"
 
     var x = setInterval(function() {
     
