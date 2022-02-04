@@ -10,7 +10,6 @@ export const Chantina = ({ matretter, priser }) => {
     useEffect(() => {
 		axios.get("https://api.chantina.no/getWeek")
 		.then((res)=> {
-			console.log(res.data[new Date().getDay() - 1].Pris);
 			setData(res.data[new Date().getDay() - 1])
 		})
 	}, [])

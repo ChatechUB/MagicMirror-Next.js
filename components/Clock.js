@@ -27,7 +27,7 @@ function Clock ()  {
                 setDate(days[day] + " " + d + "." + months[month]);
             }
 
-
+            
 
 
             
